@@ -22,12 +22,12 @@ public class RestResource {
 		List<Empp> employees = new ArrayList<>();
 		Empp c1 = new Empp();
 		c1.setId(1);
-		c1.setName("Aliya");
-		c1.setEmail("ali@gmail.com");
+		c1.setName("Balu");
+		c1.setEmail("balugk@gmail.com");
 		Empp c2 = new Empp();
 		c2.setId(2);
-		c2.setName("grp3");
-		c2.setEmail("grp@gmail.com");
+		c2.setName("Hari");
+		c2.setEmail("hari@gmail.com");
 		
 		employees.add(c1); employees.add(c2);
 		
