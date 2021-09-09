@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Update Page</title>
+    
+</head>
+
+<style>
+
+body{ 
+
+background-image:url(../images/11.jpg);
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size: 100% 100%;
+
+
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:white;
+}
+    .card-body{background-color: #DEB877;
+ }
+ .form-group{background-color: #DEB877;}
+</style>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-white bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href=@{adduser}>Add User</a>
+    <a class="navbar-brand" th:href=@{viewuser}>View User</a>
+    <a class="navbar-brand" th:href=@{addpatients}>Add Patient</a>
+    <a class="navbar-brand" th:href=@{viewpatients}>View Patient</a>
+    <a class="navbar-brand" th:href=@{addmedicine}>Add Medicine</a>
+    <a class="navbar-brand" th:href=@{viewmedicine}>View Medicine</a>
+    <a class="navbar-brand" th:href=@{addapp}>Add Appointment</a>
+    <a class="navbar-brand"  th:href=@{viewapp}>View Appointment</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  </div>
+</nav>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<br>
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-5 offset-md-0">
+  			<div class="card">
+  				<div class="card-body">
+  					<h4>Update Medicine</h4>
+  					
+	<form action="#" th:action="@{/savemed}" th:object="${medicine}"
+		method="POST">
+		
+		
+		<div class="form-group">
+		<label>Medicine id</label><input type="text" class="form-control"  th:field="*{id}">
+		</div>
+		<div class="form-group">
+		<label>Medicine Name</label><input type="text" class="form-control"  th:field="*{mname}">
+		</div>
+		<div class="form-group">
+		<label>Price</label><input type="text" class="form-control"  th:field="*{price}">
+		</div>
+		<div class="form-group">
+		<label>Quantity</label><input type="text" class="form-control"  th:field="*{qty}">
+		</div>
+
+<a th:href=@{/adminlogin}><button class="btn btn-primary bth-block">Update Medicine</button></a>
+		
+	</form>
+	</div></div></div></div></div>
+</body>
+</html>

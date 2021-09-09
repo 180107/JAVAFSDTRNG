@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" th:href="@{/style/style.css}">
+	    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head> 
+    <style>
+body{
+font:13px/20px;
+
+background-image:url(../images/12.jpg);
+
+background-repeat:no-repeat;
+
+background-size:100% 100%;
+
+ 
+ }
+ 
+ .navbar {
+  overflow: hidden;
+  background-color: #000000;
+  font-family: Arial;
+  top:0;
+  
+
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  top:0;
+  right:100px;
+  padding:8px 9px;
+  text-decoration: none;
+}
+
+
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: blue;
+  
+}
+
+
+
+ </style>
+<body>
+
+    
+   
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Clinical Management</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+               
+               
+                <li  class="active">
+                    
+                   <a href="/admins" >ADMIN DETAILS</a>
+                </li>
+                 <li>
+                   <a href="/hospitals" >Hospital Details</a>
+                </li>
+ </ul>
+
+           
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-danger bg-active">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="toggles-btn ">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                            
+                           
+                              <li class="nav-item">
+                                <a th:href=@{adduser}>Add User</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewuser}>View User</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addpatients}>Add Patient</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewpatients}>View Patient</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addmedicine}>Add Medicine</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewmedicine}>View Medicine</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addapp}>Add Appointment</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewapp}>View Appointment</a>
+                            </li>
+                        </ul>
+                    </div>
+              
+            </nav>
+           
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+   
+</body>
+</html>

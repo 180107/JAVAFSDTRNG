@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" th:href="@{/style/style.css}">
+	    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head> 
+    <style>
+body{
+font:13px/20px;
+
+background-image:url(../images/15.jpg);
+
+background-repeat:no-repeat;
+
+background-size:100% 100%;
+
+ 
+ }
+ 
+ .navbar {
+  overflow: hidden;
+  background-color: #000000;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 8px 9px;
+  text-decoration: none;
+}
+
+
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: blue;
+}
+
+
+.table{background-color: #FFEBCD;}
+
+
+ </style>
+<body>
+
+    
+   
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Clinical Management</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+               
+               
+                <li  class="active">
+                    
+                   <a href="/admins" >ADMIN DETAILS</a>
+                </li>
+                 <li>
+                   <a href="/hospitals" >Hospital Details</a>
+                </li>
+ </ul>
+
+           
+        </nav>    
+               <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-danger bg-active">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="toggles-btn ">
+                        <i class="fas fa-align-right"></i>
+                        <span></span>
+                    </button>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                            
+                           
+                              <li class="nav-item">
+                                <a th:href=@{adduser}>Add User</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewuser}>View User</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addpatients}>Add Patient</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewpatients}>View Patient</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addmedicine}>Add Medicine</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewmedicine}>View Medicine</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{addapp}>Add Appointment</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a th:href=@{viewapp}>View Appointment</a>
+                            </li>
+                        </ul>
+                    </div>
+              
+            </nav>
+           
+           
+           
+               
+       <br><br>
+<div th:if=${session.msg}>
+    <div class="alert alert-success" role="alert" th:text="${session.msg}">
+	</div>
+	<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+</div>
+
+<div class="container p-3">
+	<table class="table table-striped ">
+		<thead class="bg-dark text-light">
+			<tr>
+				
+			<th scope="col">ID</th>
+				<th scope="col">NAME</th>
+				<th scope="col">Email</th>
+	 </tr>
+		</thead>
+		
+			<tbody>
+				<tr th:each="col : ${admins}">
+					<td th:text="${col.id}"></td>
+					<td th:text="${col.name}"></td>
+					<td th:text="${col.email}"></td>
+					
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		</div>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+
+   
+    
+   
+</body>
+</html>
